@@ -4,7 +4,7 @@ import NewsList from "@/components/news-list";
 export default function NewsPage() {
   return (
     <>
-      <h1>New Page</h1>
+      <h1>News Page</h1>
       <NewsList news={DUMMY_NEWS} />
     </>
   );
