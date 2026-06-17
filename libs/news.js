@@ -1,7 +1,13 @@
-import { DUMMY_NEWS } from '@/dummy-news';
+import sql from "better-sqlite3";
+
+import { DUMMY_NEWS } from "@/dummy-news";
+
+const db = sql("data.db");
 
 export function getAllNews() {
-  return DUMMY_NEWS;
+  // return DUMMY_NEWS;
+  const news = db.prepare("SELECT * FROM news").all();
+  return news;
 }
 
 export function getLatestNews() {
@@ -33,7 +39,7 @@ export function getAvailableNewsMonths(year) {
 
 export function getNewsForYear(year) {
   return DUMMY_NEWS.filter(
-    (news) => new Date(news.date).getFullYear() === +year
+    (news) => new Date(news.date).getFullYear() === +year,
   );
 }
 
