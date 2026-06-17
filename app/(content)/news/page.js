@@ -11,7 +11,7 @@ export default async function NewsPage() {
 
   // const newsData = await response.json();
 
-  const news = getAllNews();
+  const news = await getAllNews();
 
   return (
     <>
